@@ -1,21 +1,18 @@
 import React from 'react';
-
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import Home from './Home';
 import Todo from './Todo';
 import Profile from './Profile';
-import {NavigationContainer} from '@react-navigation/native';
-
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
 export default function Layout() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Profile" component={Profile} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator screenOptions={{headerShown: false, tabBarShowLabel: false}}>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Todo" component={Todo} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
   );
 }
