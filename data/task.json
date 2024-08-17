@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Buy groceries",
+    "date": "2024-04-01",
+    "category": "Food"
+  },
+  {
+    "id": 2,
+    "title": "Refill gas",
+    "date": "2024-04-03",
+    "category": "Transport"
+  },
+  {
+    "id": 3,
+    "title": "Purchase new shoes",
+    "date": "2024-04-03",
+    "category": "Shopping"
+  },
+  {
+    "id": 4,
+    "title": "Have dinner with friends",
+    "date": "2024-04-03",
+    "category": "Food"
+  },
+  {
+    "id": 5,
+    "title": "Get a bus pass",
+    "date": "2024-04-05",
+    "category": "Transport"
+  },
+  {
+    "id": 6,
+    "title": "Buy a book",
+    "date": "2024-04-06",
+    "category": "Shopping"
+  },
+  {
+    "id": 7,
+    "title": "Have lunch",
+    "date": "2024-04-07",
+    "category": "Food"
+  },
+  {
+    "id": 8,
+    "title": "Take a taxi ride",
+    "date": "2024-04-08",
+    "category": "Transport"
+  },
+  {
+    "id": 9,
+    "title": "Purchase electronics",
+    "date": "2024-04-09",
+    "category": "Shopping"
+  },
+  {
+    "id": 10,
+    "title": "Have brunch",
+    "date": "2024-04-10",
+    "category": "Food"
+  },
+  {
+    "id": 11,
+    "title": "Take an Uber ride",
+    "date": "2024-04-11",
+    "category": "Transport"
+  },
+  {
+    "id": 12,
+    "title": "Buy clothing",
+    "date": "2024-04-11",
+    "category": "Shopping"
+  },
+  {
+    "id": 13,
+    "title": "Dine at a restaurant",
+    "date": "2024-04-11",
+    "category": "Food"
+  },
+  {
+    "id": 14,
+    "title": "Fuel up the car",
+    "date": "2024-04-11",
+    "category": "Transport"
+  },
+  {
+    "id": 15,
+    "title": "Purchase gadgets",
+    "date": "2024-04-11",
+    "category": "Shopping"
+  }
+]
