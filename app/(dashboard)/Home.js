@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, SafeAreaView} from 'react-native';
 import {Calendar} from 'react-native-calendars';
 import Task from '../../components/Task';
 import taskData from '../../data/task.json';

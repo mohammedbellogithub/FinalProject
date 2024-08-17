@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons/faArrowRight';
 const Welcome = () => {
   const navigation = useNavigation();
 
@@ -18,17 +19,13 @@ const Welcome = () => {
         />
       </View>
       <TouchableOpacity onPress={navigateToLogin} style={styles.arrowContainer}>
-        <Text>----HEllo</Text>
+        <FontAwesomeIcon icon={faArrowRight} size={24} />
       </TouchableOpacity>
       <View style={styles.welcomeSection}>
         <View style={styles.logoAndText}>
           <Text style={styles.appText}>Never been easier</Text>
         </View>
         <Text style={styles.introText}>Add, edit todos with one tap</Text>
-      </View>
-      <View style={styles.bulletContainer}>
-        {/* <Entypo name="dot-single" style={styles.bulletInActiveIcon} />
-        <Entypo name="dot-single" style={styles.bulletIcon} /> */}
       </View>
     </View>
   );

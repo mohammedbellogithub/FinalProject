@@ -39,7 +39,7 @@ const SignUp = () => {
       }
 
       const response = await api.post('/register', {
-        firstName: 'John',
+        firstName: 'x',
         lastName: name,
         username: email,
         emailAddress: email,

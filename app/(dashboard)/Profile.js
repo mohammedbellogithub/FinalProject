@@ -1,63 +1,55 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
-import api from '../../util/axios';
+import React from 'react';
+import {useUser} from '../../provider/AppState';
+import {useNavigation} from '@react-navigation/native';
+
+import {View, Text, Image, StyleSheet, Button} from 'react-native';
 const Profile = () => {
-  const [userDetails, setUserDetails] = useState({});
-
-  const getUserDetails = async () => {
-    try {
-      const userJson = await api.post('/auth/login', {
-        email: email,
-        password: password,
-      });
-      if (userJson) {
-        const user = JSON.parse(userJson);
-        setUserDetails(user);
-      } else {
-        Alert.alert('Error', 'User details not found');
-      }
-    } catch (error) {
-      console.error('Error:', error.message);
-      Alert.alert('Error', 'An error occurred while retrieving user details');
-    }
+  const {user, logoutUser} = useUser();
+  const navigation = useNavigation();
+  const handleLogout = () => {
+    logoutUser;
+    navigation.navigate('Login');
   };
-  useEffect(() => {
-    getUserDetails();
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../../assets/image_11.jpg')}
-        style={styles.profileImage}
-      />
-      <Text style={styles.name}>{userDetails.name}</Text>
-      <View style={styles.aboutContainer}>
-        <Text style={styles.contactLabel}>About </Text>
-        <Text style={styles.about}>
-          Embracing the journey of productivity and personal growth one task at
-          a time. With a blend of ambition and determination, I'm committed to
-          tackling my to-do list and achieving my aspirations. From small
-          victories to big dreams, every step forward counts. Let's make each
-          day count and strive for progress together!
-        </Text>
-      </View>
-      <View style={styles.divider} />
-      <View style={styles.contactInfo}>
-        <Text style={styles.contactLabel}>Phone Number: </Text>
-        <Text>+1234567890</Text>
-      </View>
-      <View style={styles.divider} />
-      <View style={styles.contactInfo}>
-        <Text style={styles.contactLabel}>Email: </Text>
-        <Text>{userDetails.email}</Text>
-      </View>
-      <View style={styles.divider} />
-      <View style={styles.contactInfo}>
-        <Text style={styles.contactLabel}>Location: </Text>
-        <Text>Barrie</Text>
-      </View>
-    </View>
+    <>
+      {user ? (
+        <View style={styles.container}>
+          <Image
+            source={require('../../assets/image_11.jpg')}
+            style={styles.profileImage}
+          />
+          <Text style={styles.name}>{user.displayName}</Text>
+          <View style={styles.aboutContainer}>
+            <Text style={styles.contactLabel}>About </Text>
+            <Text style={styles.about}>
+              Embracing the journey of productivity and personal growth one task
+              at a time. With a blend of ambition and determination, I'm
+              committed to tackling my to-do list and achieving my aspirations.
+              From small victories to big dreams, every step forward counts.
+              Let's make each day count and strive for progress together!
+            </Text>
+          </View>
+          <View style={styles.divider} />
+          <View style={styles.contactInfo}>
+            <Text style={styles.contactLabel}>Phone Number: </Text>
+            <Text>+1234567890</Text>
+          </View>
+          <View style={styles.divider} />
+          <View style={styles.contactInfo}>
+            <Text style={styles.contactLabel}>Email: </Text>
+            <Text>{user.emailAddress}</Text>
+          </View>
+          <View style={styles.divider} />
+          <View style={styles.contactInfo}>
+            <Text style={styles.contactLabel}>Location: </Text>
+            <Text>Barrie</Text>
+          </View>
+          <Button title="Logout" onPress={handleLogout} />
+        </View>
+      ) : (
+        <Text>No user signed in.</Text>
+      )}
+    </>
   );
 };
 const styles = StyleSheet.create({

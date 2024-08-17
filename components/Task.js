@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {AntDesign} from 'react-native-vector-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faTrash} from '@fortawesome/free-solid-svg-icons/faTrash';
+
 import {useNavigation} from '@react-navigation/native';
 
 const Task = props => {
@@ -24,7 +26,7 @@ const Task = props => {
           <Text style={styles.sub}>{props.date}</Text>
         </View>
         <TouchableOpacity onPress={() => props.onDelete(props.id)}>
-          <AntDesign name="delete" size={24} color="black" />
+          <FontAwesomeIcon icon={faTrash} />
         </TouchableOpacity>
       </View>
     </TouchableOpacity>

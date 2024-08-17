@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useUser} from '../../provider/AppState';
 import {
   View,
   Text,
@@ -15,6 +16,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
+  const {loginUser} = useUser();
 
   const handleSignIn = async () => {
     try {
@@ -24,6 +26,7 @@ const Login = () => {
       });
 
       if (response.status === 200) {
+        loginUser(response.data.data);
         navigation.navigate('Layout');
       } else {
         Alert.alert('Error', 'Invalid email or password');
