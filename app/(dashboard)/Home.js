@@ -30,7 +30,7 @@ const Home = () => {
   }, [selectedDate]);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, paddingTop: 50}}>
       <Calendar
         onDayPress={handleDateSelection}
         markedDates={{

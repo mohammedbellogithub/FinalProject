@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingHorizontal: 20,
     paddingVertical: 30,
+    paddingTop: 50,
   },
   profileRow: {
     flexDirection: 'row',
